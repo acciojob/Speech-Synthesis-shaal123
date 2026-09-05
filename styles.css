@@ -1,94 +1,134 @@
-html {
-  font-size: 10px;
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
+* {
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #3BC1AC;
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
+    margin: 0;
+    min-height: 100vh;
 
-  background-image:
-  radial-gradient(circle at 100% 150%, #3BC1AC 24%, #42D2BB 25%, #42D2BB 28%, #3BC1AC 29%, #3BC1AC 36%, #42D2BB 36%, #42D2BB 40%, transparent 40%, transparent),
-  radial-gradient(circle at 0    150%, #3BC1AC 24%, #42D2BB 25%, #42D2BB 28%, #3BC1AC 29%, #3BC1AC 36%, #42D2BB 36%, #42D2BB 40%, transparent 40%, transparent),
-  radial-gradient(circle at 50%  100%, #42D2BB 10%, #3BC1AC 11%, #3BC1AC 23%, #42D2BB 24%, #42D2BB 30%, #3BC1AC 31%, #3BC1AC 43%, #42D2BB 44%, #42D2BB 50%, #3BC1AC 51%, #3BC1AC 63%, #42D2BB 64%, #42D2BB 71%, transparent 71%, transparent),
-  radial-gradient(circle at 100% 50%, #42D2BB 5%, #3BC1AC 6%, #3BC1AC 15%, #42D2BB 16%, #42D2BB 20%, #3BC1AC 21%, #3BC1AC 30%, #42D2BB 31%, #42D2BB 35%, #3BC1AC 36%, #3BC1AC 45%, #42D2BB 46%, #42D2BB 49%, transparent 50%, transparent),
-  radial-gradient(circle at 0    50%, #42D2BB 5%, #3BC1AC 6%, #3BC1AC 15%, #42D2BB 16%, #42D2BB 20%, #3BC1AC 21%, #3BC1AC 30%, #42D2BB 31%, #42D2BB 35%, #3BC1AC 36%, #3BC1AC 45%, #42D2BB 46%, #42D2BB 49%, transparent 50%, transparent);
-  background-size:100px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
 }
 
-.voiceinator {
-  padding: 2rem;
-  width: 50rem;
-  margin: 0 auto;
-  border-radius: 1rem;
-  position: relative;
-  background: white;
-  overflow: hidden;
-  z-index: 1;
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+.container {
+    width: 90%;
+    max-width: 650px;
+
+    padding: 30px;
+
+    background-color: white;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  width: calc(100% + 4rem);
-  margin: -2rem 0 2rem -2rem;
-  padding: .5rem;
-  background: #ffc600;
-  border-bottom: 5px solid #F3C010;
-  text-align: center;
-  font-size: 5rem;
-  font-weight: 100;
-  font-family: 'Pacifico', cursive;
-  text-shadow: 3px 3px 0 #F3C010;
-}
-
-.voiceinator input,
-.voiceinator button,
-.voiceinator select,
-.voiceinator textarea {
-  width: 100%;
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  border: 0;
-  font-size: 2rem;
-  background: #F7F7F7;
-  outline: 0;
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
 }
 
 textarea {
-  height: 20rem;
+    width: 100%;
+    height: 150px;
+
+    padding: 12px;
+
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    resize: vertical;
 }
 
-input[type="select"] {
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
 
+    font-weight: bold;
+    color: #444;
 }
 
-.voiceinator button {
-  background: #ffc600;
-  border: 0;
-  width: 49%;
-  float: left;
-  font-family: 'Pacifico', cursive;
-  margin-bottom: 0;
-  font-size: 2rem;
-  border-bottom: 5px solid #F3C010;
-  cursor: pointer;
-  position: relative;
+select {
+    width: 100%;
+    padding: 12px;
+
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    background-color: white;
 }
 
-.voiceinator button:active {
-  top: 2px;
+.control {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.voiceinator button:nth-of-type(1) {
-  margin-right: 2%;
+.control label {
+    width: 70px;
+    margin: 0;
+}
+
+input[type="range"] {
+    flex: 1;
+    cursor: pointer;
+}
+
+.control span {
+    width: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+button {
+    flex: 1;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#speakBtn {
+    background-color: #2563eb;
+    color: white;
+}
+
+#stopBtn {
+    background-color: #dc2626;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#status {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
 }
